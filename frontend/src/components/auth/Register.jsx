@@ -12,10 +12,12 @@ export default function Register() {
 
   const handleSignup = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const response = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(response);
       updateProfile(auth.currentUser, { displayName: name });
       navigate("/");
     } catch (error) {
+      console.log(error)
       toast(error.code, { type: "error" });
     }
   };
@@ -23,7 +25,7 @@ export default function Register() {
     <div className="border p-3 bg-light " style={{ marginTop: 70 }}>
       <h1>Register</h1>
       <div className="form-group">
-        <label>Name</label>
+        <label>Name: {name}</label>
         <input
           type="text"
           className="form-control"
@@ -34,7 +36,7 @@ export default function Register() {
         />
       </div>
       <div className="form-group">
-        <label>Email</label>
+        <label>Email: {email}</label>
         <input
           type="email"
           className="form-control"
@@ -46,7 +48,7 @@ export default function Register() {
       </div>
 
       <div className="form-group">
-        <label>Password</label>
+        <label>Password: {password}</label>
         <input
           type="password"
           className="form-control"
