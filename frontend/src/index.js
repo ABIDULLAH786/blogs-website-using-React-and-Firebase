@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import "font-awesome/css/font-awesome.css";
+// import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

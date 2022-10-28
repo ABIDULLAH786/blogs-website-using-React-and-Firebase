@@ -1,3 +1,5 @@
+import { Button } from "antd";
+
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 // import { auth } from "../../Config/firebaseConfig";
@@ -56,6 +58,10 @@ export default function Login() {
         <button className="btn btn-primary" onClick={handleLogin}>
           Login
         </button>
+        <Button type="primary" shape="round" size={"large"}>
+          Login
+        </Button>
+
         <button
           className="btn btn-dark"
           onClick={() => {
@@ -74,6 +80,9 @@ export default function Login() {
               })
               .catch((error) => {
                 console.log(error);
+
+                // Add Alert
+
                 // Handle Errors here.
                 // const errorCode = error.code;
                 // const errorMessage = error.message;
