@@ -16,7 +16,7 @@ export default function Article() {
     onSnapshot(docRef, (snapshot) => {
       setArticle({ ...snapshot.data(), id: snapshot.id });
     });
-  }, []);
+  }, [id]);
   return (
     <div className="container border bg-light" style={{ marginTop: 70 }}>
       {article && (

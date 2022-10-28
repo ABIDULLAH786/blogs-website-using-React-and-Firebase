@@ -15,7 +15,7 @@ export default function Comment({ id }) {
     onSnapshot(docRef, (snapshot) => {
       setComments(snapshot.data().comments);
     });
-  }, []);
+  }, [id]);
 
   const handleChangeComment = (e) => {
     if (e.key === "Enter") {

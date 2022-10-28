@@ -12,12 +12,11 @@ export default function Register() {
 
   const handleSignup = async () => {
     try {
-      const response = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(response);
+      await createUserWithEmailAndPassword(auth, email, password);
       updateProfile(auth.currentUser, { displayName: name });
       navigate("/");
     } catch (error) {
-      console.log(error)
+      console.log(error);
       toast(error.code, { type: "error" });
     }
   };

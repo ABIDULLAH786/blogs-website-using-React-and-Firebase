@@ -12,8 +12,10 @@ export default function Articles() {
   useEffect(() => {
     const articleRef = collection(db, "Articles");
     const q = query(articleRef, orderBy("createdAt", "desc"));
-    onSnapshot(q, (snapshot) => {
-      console.log(snapshot)
+    onSnapshot(q, (snapshot) => 
+    {
+
+      // console.log(snapshot)
       const articles = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
